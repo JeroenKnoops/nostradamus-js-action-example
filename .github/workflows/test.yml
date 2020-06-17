@@ -15,6 +15,5 @@ jobs:
       id: nostradamus
       with:
         sourcePath: .
-    - run: |
-        echo "has new dependencies:"
-        echo ${steps.nostradamus.outputs.newDependencies}
+    - name: cat output
+      run: echo ${{ steps.nostadamus.outputs.newDependencies }}
