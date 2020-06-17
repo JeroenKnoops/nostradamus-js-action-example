@@ -1,0 +1,15 @@
+name: test
+on: 
+  push:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: philips-labs/nostradamus-action@main
+      id: nostradamus
+      with:
+        sourcePath: .
+    - run: echo "has new dependencies: ${{ steps.nostradamus.outputs.newDependencies }}"
