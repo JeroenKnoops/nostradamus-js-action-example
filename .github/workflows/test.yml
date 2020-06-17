@@ -8,7 +8,7 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-    - uses: philips-labs/nostradamus-action@main
+    - uses: philips-labs/nostradamus-js-action@main
       id: nostradamus
       with:
         sourcePath: .
